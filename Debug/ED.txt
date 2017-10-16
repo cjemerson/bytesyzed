@@ -1,0 +1,36 @@
+! 0xED
+! "dump id"
+0xED 0x00
+0xED 0x11
+0xED 0xFD ; Combines 0xED 0xFE and 0xED 0xFF
+0xEF
+0xEE
+
+!mem#
+! ED
+! 00
+! ED
+! 11
+! ED
+! FD
+! EF
+! EE
+!mem!
+!regs#
+! 00
+! 00
+! 00
+! 00
+! 00
+! 00
+! 00
+! 00
+! 00
+! 00
+! 00
+! 00
+! 00
+! 00
+! FF
+! 06
+!regs!

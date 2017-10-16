@@ -1,0 +1,29 @@
+! 0xE1
+! "getchar"
+0xE1 ! input 0x42 (66 in decimal) for debugging correctness 
+0xEF
+0xEE
+
+!mem#
+! E1
+! EF
+! EE
+!mem!
+!regs#
+! 42
+! 00
+! 00
+! 00
+! 00
+! 00
+! 00
+! 00
+! 00
+! 00
+! 00
+! 00
+! 00
+! 00
+! FF
+! 01
+!regs!

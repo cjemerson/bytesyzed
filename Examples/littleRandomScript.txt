@@ -1,0 +1,34 @@
+// Just a little random script to show how to input the "machine code"
+// Anything that is not one of the first four (or less) numbers on each line is ignored
+// For clarity the instructions have their arguements next to them but
+// The values could all be on separate lines
+
+0x04 0x32 // mov r4, 0x32
+
+0xED 0x04 // dump(r4) : Dump register 0x4
+
+0x07 0x4B // mov r7, 0x4B
+
+0xA0 0x47 // add r4,r7 : r4 += r7 (r4 should be 0x7D)
+
+0xED 0x04 // dump(r4)
+
+0x16 0x4F // dec r4,0x15 : r4 -= 15 (r4 should be 0x6E)
+
+0xED 0x04 // dump(r4)
+
+0xD0 // Do nothing
+
+0x77 0x71 // skipIfNZ reg7,1 : skip one line of code if register 7 is not zero (which it's not)
+
+0xC3 // ret : Would seg fault since there is nothing to pop off the stack
+
+0x84 // Push r4
+
+0x90 // Pop r0 (r0 should be 0x7D)
+
+0xED 0x00 // dump(r0) : Dump register 0x0
+
+0x00 0x01 // mov r0, 0x01
+
+0xEE // Emulator exit. Return r0
