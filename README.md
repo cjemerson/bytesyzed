@@ -1,11 +1,11 @@
 # bytesyzed
 ByteSyzed Micro CPU Emulator
 
-So my project was to design and implement an instruction set architecture.
+My project was to design and implement an instruction set architecture.
 
-As of now, my ByteSyzed CPU class compiles and executes basic commands.
+As of now, my ByteSyzed CPU class compiles and executes 55 individual commands.
 
-This is a refactored version that I has been fully tested.
+This is a refactored version that I have fully tested.
 To get started: Compile main.cpp and ByteSyzed.cpp and run. (NOTE: You can input a file name in the command line to load and run).
 
 There is an included html documentation which really summarizes this project.
