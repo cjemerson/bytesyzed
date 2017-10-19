@@ -62,7 +62,7 @@ p {
 <p>The instruction encoding is chosen such that everything is a multiple of one byte. This makes machine language programs easy to write in hex. There are currently 55 valid instructions (a.k.a opcodes for operation codes). Instructions vary in size and format. Some take only one byte while others take up to 4 bytes to concisely manipulate the 16 registers and memory. Some use nibbles (or half-bytes) to specify registers and byte-sized values.</p>
 <div>
 <table cellpadding="10">
-	<tr> <th>opcode</br>(in hex)</th> <th>Encoding</br>(in bytes)</th> <th>Psuedo-Implementation</th> <th>Description</th> </tr>
+	<tr> <th>opcode<br>(in&nbsp;hex)</th> <th>Encoding<br>(in&nbsp;bytes)</th> <th>Psuedo-Implementation</th> <th>Description</th> </tr>
 	<tr> <td>0x0R</td> <td>movA val</td> <td>reg[A] = val</td> <td>Moves a value into a register immediately.</td> </tr>
 	<tr> <td>0x10</td> <td>mov AB</td> <td>reg[A] = reg[B]</td> <td>Copies a register into another register.</td></tr>
 	<tr> <td>0x11</td> <td>mov AB</td> <td>reg[A] = mem[reg[B]]</td> <td>Copies the value that a register is pointing to into another register.</td></tr>
@@ -160,10 +160,9 @@ Computer" of <em>Computer Organiztion and Design: The Hardware/Software (Fifth E
 <hr>
 <address align="right">
 Author: Charles Emerson<br>
-Title: The Lowly Scrub<br>
 (cjemerson AT alaska.edu)<br><br>
 Created: 9/30/17 <br>
-Last Edited: 10/15/17
+Last Edited: 10/19/17
 </address>
 </body>
 </html>
