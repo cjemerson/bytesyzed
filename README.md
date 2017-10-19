@@ -1,18 +1,18 @@
 # bytesyzed
-#ByteSyzed: Micro CPU Emulator
+# ByteSyzed: Micro CPU Emulator
 
-##Introduction
+## Introduction
 ByteSyzed is a micro CPU emulator with 256 bytes of memory based off of Orion Lawlor's [UEMU](https://www.cs.uaf.edu/2005/fall/cs301/uemu/uemu/uemu.html) and [FUNK emu](https://www.cs.uaf.edu/2006/fall/cs301/funk_emu/) micro emulator architectures. Instructions are loaded from an input file and then executed. ByteSyzed uses scratch and (theoretically) preserved registers to manipulate memory and each other. Powerful things come in small packages. If you desire to use of this emulator, make sure not to byte off more than you can nibble.
 
 To get started: Compile main.cpp and ByteSyzed.cpp and run. (NOTE: You can input a file name in the command line to load and run). To see a trace of the instructions, set ```verbose``` to true.
 
-##Memory
+## Memory
 Used for storing program instructions, hard-coded values and the stack.
 
-##Registers
+## Registers
 There are 16 one-byte registers numbered 0 through F (in hex). These will expressed as an array with hexadecimal indexes throughout this reference (i.e. register 11 is ```reg[0xB]```). The first 14 registers are scratch registers and the others should not be manipulated directly. The program counter is ```reg[0xF]```, which stores the memory address of the current instruction to execute. The stack pointer is ```reg[0xE]```, which stores values and return addresses.
 
-##Instructions
+## Instructions
 The instruction encoding is chosen such that everything is a multiple of one byte. This makes machine language programs easy to write in hex. There are currently 55 valid instructions (a.k.a opcodes for operation codes). Instructions vary in size and format. Some take only one byte while others take up to 4 bytes to concisely manipulate the 16 registers and memory. Some use nibbles (or half-bytes) to specify registers and byte-sized values. Because of the memory limitation, the cheapest encoding was considered.
 
 <table>
@@ -74,18 +74,18 @@ The instruction encoding is chosen such that everything is a multiple of one byt
 	<tr> <td>0xEF</td> <td>fileDump</td> <td>fileDump()</td> <td>Emulator call. Prints out all of memory and all the registers in ascending order to a file "debug.txt" (for debugging).</td> </tr>
 </table>
 
-##Input File
+## Input File
 The input file consists of machine language instructions, written with up to four instructions per line. Instructions should be encoded in hexadecimal bytes (i.e. ```0xAB 0xCD```) but can be written in octal (```0253 0315```) or decimal. Instructions larger than one byte will cause a runtime error. Anything after the read instructions is ignored and can be used for comments. Lines that do not start with integers are ignored.
 
 The first instruction is read and loaded into the memory address of ```progstart```, which is the initial value of the program counter ```reg[0xF]```. Each additional instruction read is loaded into the subsequent (e.g. higher) memory address.
 
-##ByteSyzed Class
+## ByteSyzed Class
 The ByteSyzed Class has memory and registers stored as arrays of unsigned char. Every aspect of ByteSyzed is a public member. The program start ```progstart``` is where the first instruction is loaded (this is stored at the initial value of register 0xE). The bool ```prompt``` stores whether or not to display "```Enter value: ```" when getting input from getchar. The bool ```verbose``` stores whether or not to display instruction traces. The bool ```loadVerbose``` stores whether or not to display results from reading and loading from a file. 
 
-##Debugging
+## Debugging
 The debugging suite is a bash shell script which loads and runs manaully-defined debugging files and prints out all memory and all registers to ```debug.txt``` and compares the file to the debugging files "theoretically correct" memory and registers using a Python script. Credit to the Python script goes to the illustrious and ubiquitous Jacob Butler. He is just happy to have sunk his pristine fingers into yet another grimy assembly course.
 
-##Author Notes
+## Author Notes
 The following is a summary of important addendeums:
 
  * Everything is a multiple of a byte (and thus stored in a ```char``` or ```char[]```), larger values will be modulo 256 (with exception to loading from files).
@@ -100,7 +100,7 @@ The following is a summary of important addendeums:
  * It is possible (and easy) to have static local variables for functions.
  * ByteSyzed is small enough that bugs are easy enough to find by dumping the memory and the registers.
 
-##More Information
+## More Information
 To learn more about instruction set architecture and the benefits of focusing different aspects of them, read "Chapter 2: Instructions:
 Language of the
 Computer" of *Computer Organiztion and Design: The Hardware/Software (Fifth Edition)*, by D. Patterson and J. Hennessy.
