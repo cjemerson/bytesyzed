@@ -114,7 +114,7 @@ p {
 	<tr> <td>0xE9</td> <td>dumpregs[0x1]</td> <td>dumpRegs(0x1)</td> <td>Emulator call. Calls the emulator register dump function using 0x1 as the arguement.</td> </tr>
 	<tr> <td>0xEA</td> <td>dumpMem</td> <td>dumpMemRange(0, 0xFF)</td> <td>Emulator call. Calls the emulator memory dump function.</td> </tr>
 	<tr> <td>0xEB</td> <td>dumpMem</td> <td>dumpMemRange(regs[0x1], regs[0x2])</td> <td>Emulator call. Calls the emulator memory range dump function using registers 0x1 and 0x2 as arguements. Can print in ascending or descending order.</td> </tr>
-	<tr> <td>0xEC</td> <td>dumpRegs</td> <td>dumpRegs(regs[0x1])</td> <td>Emulator call. Calls the emulator register dump function. Prints either an individual register or all registers in ascending order.
+	<tr> <td>0xEC</td> <td>dumpRegs</td> <td>dumpRegs(regs[0x1])</td> <td>Emulator call. Calls the emulator register dump function. Prints either an individual register or all registers in ascending order.</td> </tr>
 	<tr> <td>0xED</td> <td>dump id</td> <td>dump(id)</td> <td>Emulator call. Calls the emulator dump function using id as the arguement. Can do a disabled dump.</td> </tr>
 	<tr> <td>0xEE</td> <td>exit</td> <td>exit(reg[0x0])</td> <td>Emulator call. Exits the emulator, returning the value of register 0.</td> </tr>
 	<tr> <td>0xEF</td> <td>fileDump</td> <td>fileDump()</td> <td>Emulator call. Prints out all of memory and all the registers in ascending order to a file "debug.txt" (for debugging).</td> </tr>
