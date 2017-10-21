@@ -1,4 +1,3 @@
-# bytesyzed
 # ByteSyzed: Micro CPU Emulator
 
 ## Introduction
